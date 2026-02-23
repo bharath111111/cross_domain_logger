@@ -1,0 +1,9 @@
+/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/debug/deps/cocoa_foundation-37a3b8685445f615.d: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cocoa-foundation-0.1.2/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cocoa-foundation-0.1.2/src/base.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cocoa-foundation-0.1.2/src/foundation.rs
+
+/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/debug/deps/libcocoa_foundation-37a3b8685445f615.rlib: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cocoa-foundation-0.1.2/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cocoa-foundation-0.1.2/src/base.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cocoa-foundation-0.1.2/src/foundation.rs
+
+/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/debug/deps/libcocoa_foundation-37a3b8685445f615.rmeta: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cocoa-foundation-0.1.2/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cocoa-foundation-0.1.2/src/base.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cocoa-foundation-0.1.2/src/foundation.rs
+
+/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cocoa-foundation-0.1.2/src/lib.rs:
+/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cocoa-foundation-0.1.2/src/base.rs:
+/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cocoa-foundation-0.1.2/src/foundation.rs:

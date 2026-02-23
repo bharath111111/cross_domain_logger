@@ -1,0 +1,1 @@
+/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/x86_64-pc-windows-gnu/release/cross_domain_logger.exe: /Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/src/main.rs
