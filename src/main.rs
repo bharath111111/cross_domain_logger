@@ -123,7 +123,7 @@ impl LoggerApp {
 
         if !self.qnx_ip.trim().is_empty() {
             let qnx_child = Command::new("ssh")
-                .arg(format!("user@{}", self.qnx_ip))
+                .arg(format!("root@{}", self.qnx_ip))
                 .arg("slog2info -w")
                 .stdout(qnx_file)
                 .spawn();
