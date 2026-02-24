@@ -221,10 +221,10 @@ impl eframe::App for LoggerApp {
             ui.heading("Cross Domain Log Collector");
             ui.separator();
 
-            ui.label("QNX IP:");
+            ui.label("QNX IP: 192.168.164.115");
             ui.text_edit_singleline(&mut self.qnx_ip);
 
-            ui.label("Android IP/ID:");
+            ui.label("Android IP/ID: {NA_A2B: 7d186538}");
             ui.text_edit_singleline(&mut self.android_ip);
 
             ui.label("Ethernet Interface:");
