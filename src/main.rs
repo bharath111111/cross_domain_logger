@@ -124,7 +124,7 @@ impl LoggerApp {
         if !self.qnx_ip.trim().is_empty() {
             let qnx_child = Command::new("ssh")
                 .arg(format!("root@{}", self.qnx_ip))
-                .arg("PATH=/proc/boot:/bin:/sbin:/usr/sbin; echo QNX_READY && slog2info -w")
+                .arg("sh -l -c 'exec slog2info -w'")
                 .stdout(qnx_file)
                 .spawn();
 
