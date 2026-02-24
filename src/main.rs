@@ -65,7 +65,7 @@ impl LoggerApp {
             .arg("BatchMode=yes")
             .arg("-o")
             .arg("ConnectTimeout=5")
-            .arg(format!("user@{}", self.qnx_ip))
+            .arg(format!("root@{}", self.qnx_ip))
             .arg("echo ok")
             .status();
         matches!(status, Ok(s) if s.success())
