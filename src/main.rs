@@ -124,7 +124,7 @@ impl LoggerApp {
         if !self.qnx_ip.trim().is_empty() {
             let qnx_child = Command::new("ssh")
                 .arg(format!("root@{}", self.qnx_ip))
-                .arg("sleep 0.5; slog2info -w")
+                .arg("echo QNX_READY && sleep 1 && slog2info -w")
                 .stdout(qnx_file)
                 .spawn();
 
