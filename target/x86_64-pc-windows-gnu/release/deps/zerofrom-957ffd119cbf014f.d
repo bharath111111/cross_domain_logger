@@ -1,0 +1,9 @@
+/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/x86_64-pc-windows-gnu/release/deps/zerofrom-957ffd119cbf014f.d: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerofrom-0.1.6/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerofrom-0.1.6/src/macro_impls.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerofrom-0.1.6/src/zero_from.rs
+
+/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/x86_64-pc-windows-gnu/release/deps/libzerofrom-957ffd119cbf014f.rlib: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerofrom-0.1.6/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerofrom-0.1.6/src/macro_impls.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerofrom-0.1.6/src/zero_from.rs
+
+/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/x86_64-pc-windows-gnu/release/deps/libzerofrom-957ffd119cbf014f.rmeta: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerofrom-0.1.6/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerofrom-0.1.6/src/macro_impls.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerofrom-0.1.6/src/zero_from.rs
+
+/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerofrom-0.1.6/src/lib.rs:
+/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerofrom-0.1.6/src/macro_impls.rs:
+/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerofrom-0.1.6/src/zero_from.rs:

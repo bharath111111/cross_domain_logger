@@ -1,0 +1,9 @@
+/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/x86_64-pc-windows-gnu/release/deps/once_cell-829caf35f481a568.d: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/once_cell-1.21.3/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/once_cell-1.21.3/src/imp_std.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/once_cell-1.21.3/src/race.rs
+
+/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/x86_64-pc-windows-gnu/release/deps/libonce_cell-829caf35f481a568.rlib: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/once_cell-1.21.3/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/once_cell-1.21.3/src/imp_std.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/once_cell-1.21.3/src/race.rs
+
+/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/x86_64-pc-windows-gnu/release/deps/libonce_cell-829caf35f481a568.rmeta: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/once_cell-1.21.3/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/once_cell-1.21.3/src/imp_std.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/once_cell-1.21.3/src/race.rs
+
+/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/once_cell-1.21.3/src/lib.rs:
+/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/once_cell-1.21.3/src/imp_std.rs:
+/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/once_cell-1.21.3/src/race.rs:
