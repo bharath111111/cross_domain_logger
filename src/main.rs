@@ -1,3 +1,12 @@
+use std::env;
+mod vxl_capture;
+            // Optional: CAN/ETH capture via vxlapi.dll
+            // Example usage (uncomment to test):
+            // match vxl_capture::try_open_driver() {
+            //     Ok(_) => println!("vxlapi driver opened successfully"),
+            //     Err(e) => println!("vxlapi error: {}", e),
+            // }
+            // vxl_capture::try_close_driver();
 use eframe::egui;
 use std::process::{Command, Child};
 use std::fs;
@@ -341,6 +350,19 @@ impl eframe::App for LoggerApp {
 }
 
 fn main() -> Result<(), eframe::Error> {
+    // Check for --test-can flag (for Vector CAN test)
+    if std::env::args().any(|arg| arg == "--test-can") {
+        match vxl_capture::try_open_driver() {
+            Ok(_) => println!("vxlapi driver opened successfully"),
+            Err(e) => { println!("vxlapi error: {}", e); return Ok(()); }
+        }
+        match vxl_capture::try_capture_can() {
+            Ok(_) => println!("CAN capture test complete"),
+            Err(e) => println!("CAN capture error: {}", e),
+        }
+        vxl_capture::try_close_driver();
+        return Ok(());
+    }
     let options = eframe::NativeOptions::default();
     eframe::run_native(
         "Cross Domain Logger",
