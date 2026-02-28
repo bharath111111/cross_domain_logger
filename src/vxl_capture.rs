@@ -26,7 +26,8 @@ pub struct XLcanRxEvent {
     pub timeStamp: u64,
 }
 
-#[link(name = "vxlapi")]
+#[cfg_attr(all(target_os = "windows", target_arch = "x86_64"), link(name = "vxlapi64"))]
+#[cfg_attr(not(all(target_os = "windows", target_arch = "x86_64")), link(name = "vxlapi"))]
 unsafe extern "C" {
     pub fn xlOpenDriver() -> XLstatus;
     pub fn xlCloseDriver() -> XLstatus;

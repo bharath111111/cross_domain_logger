@@ -1,4 +1,4 @@
-use std::env;
+#[cfg(feature = "vxl-can")]
 mod vxl_capture;
             // Optional: CAN/ETH capture via vxlapi.dll
             // Example usage (uncomment to test):
@@ -352,16 +352,30 @@ impl eframe::App for LoggerApp {
 fn main() -> Result<(), eframe::Error> {
     // Check for --test-can flag (for Vector CAN test)
     if std::env::args().any(|arg| arg == "--test-can") {
-        match vxl_capture::try_open_driver() {
-            Ok(_) => println!("vxlapi driver opened successfully"),
-            Err(e) => { println!("vxlapi error: {}", e); return Ok(()); }
+        #[cfg(feature = "vxl-can")]
+        {
+            match vxl_capture::try_open_driver() {
+                Ok(_) => println!("vxlapi driver opened successfully"),
+                Err(e) => {
+                    println!("vxlapi error: {}", e);
+                    return Ok(());
+                }
+            }
+            match vxl_capture::try_capture_can() {
+                Ok(_) => println!("CAN capture test complete"),
+                Err(e) => println!("CAN capture error: {}", e),
+            }
+            vxl_capture::try_close_driver();
+            return Ok(());
         }
-        match vxl_capture::try_capture_can() {
-            Ok(_) => println!("CAN capture test complete"),
-            Err(e) => println!("CAN capture error: {}", e),
+
+        #[cfg(not(feature = "vxl-can"))]
+        {
+            println!(
+                "--test-can requested, but vxl CAN support is disabled. Rebuild with --features vxl-can"
+            );
+            return Ok(());
         }
-        vxl_capture::try_close_driver();
-        return Ok(());
     }
     let options = eframe::NativeOptions::default();
     eframe::run_native(
