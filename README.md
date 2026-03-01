@@ -61,6 +61,19 @@ Build + package + refresh shareable outputs:
 build_and_update_shareable.bat
 ```
 
+Check CAN channel mapping from the production executable:
+
+```bat
+cross_domain_logger_windows.exe --test-can --can-map --can-app CANoe --can-max-channels 64
+```
+
+What this gives you:
+
+- active app channel mapping from CANoe
+- hardware binding per channel (`hwType`, `hwIndex`, `hwChannel`, `mask`)
+- quick confirmation of which channels are valid (`hwType=0` means not mapped)
+- direct visibility before starting long capture runs
+
 ## Final deliverables
 
 - `dist/cross_domain_logger_windows_can_test_bundle.zip`

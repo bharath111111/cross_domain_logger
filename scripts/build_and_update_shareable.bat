@@ -88,12 +88,27 @@ if errorlevel 1 (
   popd
   exit /b 1
 )
+copy /y "README.md" "%SHAREABLE_DIR%\README.md" >nul
+if errorlevel 1 (
+  echo ERROR: Failed to stage README.md for shareable package.
+  popd
+  exit /b 1
+)
 (
   echo Cross Domain Logger - Build Configuration Summary
   echo Generated: %date% %time%
   echo.
   echo Build command:
   echo   cargo +stable-x86_64-pc-windows-gnu build --release --features vxl-can
+  echo.
+  echo CAN mapping command:
+  echo   cross_domain_logger_windows.exe --test-can --can-map --can-app CANoe --can-max-channels 64
+  echo.
+  echo What this command gives:
+  echo   - app channel mapping currently exposed by CANoe
+  echo   - hardware info for each channel ^(hwType, hwIndex, hwChannel, mask^)
+  echo   - quick check for invalid channels ^(hwType=0 means not mapped^)
+  echo   - fast pre-run validation before capture
   echo.
   echo CAN runtime defaults:
   echo   App name: CANoe
