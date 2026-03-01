@@ -1,9 +1,0 @@
-/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/debug/deps/accesskit_winit-17aeafd2a62a1fba.d: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.16.1/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.16.1/src/platform_impl/mod.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.16.1/src/platform_impl/macos.rs
-
-/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/debug/deps/libaccesskit_winit-17aeafd2a62a1fba.rlib: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.16.1/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.16.1/src/platform_impl/mod.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.16.1/src/platform_impl/macos.rs
-
-/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/debug/deps/libaccesskit_winit-17aeafd2a62a1fba.rmeta: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.16.1/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.16.1/src/platform_impl/mod.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.16.1/src/platform_impl/macos.rs
-
-/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.16.1/src/lib.rs:
-/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.16.1/src/platform_impl/mod.rs:
-/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.16.1/src/platform_impl/macos.rs:

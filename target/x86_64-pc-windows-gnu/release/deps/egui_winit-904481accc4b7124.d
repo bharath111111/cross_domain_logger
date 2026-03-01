@@ -1,9 +1,0 @@
-/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/x86_64-pc-windows-gnu/release/deps/egui_winit-904481accc4b7124.d: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/egui-winit-0.27.2/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/egui-winit-0.27.2/src/clipboard.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/egui-winit-0.27.2/src/window_settings.rs
-
-/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/x86_64-pc-windows-gnu/release/deps/libegui_winit-904481accc4b7124.rlib: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/egui-winit-0.27.2/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/egui-winit-0.27.2/src/clipboard.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/egui-winit-0.27.2/src/window_settings.rs
-
-/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/x86_64-pc-windows-gnu/release/deps/libegui_winit-904481accc4b7124.rmeta: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/egui-winit-0.27.2/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/egui-winit-0.27.2/src/clipboard.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/egui-winit-0.27.2/src/window_settings.rs
-
-/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/egui-winit-0.27.2/src/lib.rs:
-/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/egui-winit-0.27.2/src/clipboard.rs:
-/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/egui-winit-0.27.2/src/window_settings.rs:

@@ -1,1 +1,0 @@
-/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/debug/cross_domain_logger: /Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/src/main.rs
