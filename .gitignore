@@ -1,0 +1,25 @@
+# OS/editor artifacts
+.DS_Store
+.vscode/
+
+# Rust build output
+target/
+
+# Local Python environment used during OCR testing
+.venv/
+
+# Runtime logs and temporary outputs
+run_capture_all_connected_auto.log
+logs/
+CAN_LOGS/
+all_connected_logs/
+*.asc
+*_console.log
+*.tmp
+
+# Distribution/package outputs
+dist/
+cross_domain_logger_windows_can_test_bundle/
+cross_domain_logger_windows_can_test_bundle.zip
+cross_domain_logger_shareable_package.zip
+shareable_output/

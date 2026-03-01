@@ -1,1 +1,0 @@
-for %C in (0 1 2 3 4 5 6 7 8 9 10) do start "CAN_%C" /min cmd /c "cross_domain_logger_windows.exe --test-can --can-listen --can-channel %C --can-app CANoe --can-iface-version 4 --can-duration-ms 60000 --can-log-format asc --can-log-file channel%C.asc > channel%C_console.log 2>&1"

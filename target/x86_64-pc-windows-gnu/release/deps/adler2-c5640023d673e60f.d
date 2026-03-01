@@ -1,8 +1,0 @@
-/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/x86_64-pc-windows-gnu/release/deps/adler2-c5640023d673e60f.d: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/adler2-2.0.1/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/adler2-2.0.1/src/algo.rs
-
-/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/x86_64-pc-windows-gnu/release/deps/libadler2-c5640023d673e60f.rlib: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/adler2-2.0.1/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/adler2-2.0.1/src/algo.rs
-
-/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/x86_64-pc-windows-gnu/release/deps/libadler2-c5640023d673e60f.rmeta: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/adler2-2.0.1/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/adler2-2.0.1/src/algo.rs
-
-/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/adler2-2.0.1/src/lib.rs:
-/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/adler2-2.0.1/src/algo.rs:

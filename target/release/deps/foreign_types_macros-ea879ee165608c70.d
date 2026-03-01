@@ -1,7 +1,0 @@
-/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/release/deps/foreign_types_macros-ea879ee165608c70.d: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/foreign-types-macros-0.2.3/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/foreign-types-macros-0.2.3/src/build.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/foreign-types-macros-0.2.3/src/parse.rs
-
-/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/release/deps/libforeign_types_macros-ea879ee165608c70.dylib: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/foreign-types-macros-0.2.3/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/foreign-types-macros-0.2.3/src/build.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/foreign-types-macros-0.2.3/src/parse.rs
-
-/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/foreign-types-macros-0.2.3/src/lib.rs:
-/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/foreign-types-macros-0.2.3/src/build.rs:
-/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/foreign-types-macros-0.2.3/src/parse.rs:

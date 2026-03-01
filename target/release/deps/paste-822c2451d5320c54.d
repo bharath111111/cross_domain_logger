@@ -1,8 +1,0 @@
-/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/release/deps/paste-822c2451d5320c54.d: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/attr.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/error.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/segment.rs
-
-/Users/bharathkumarreddybusireddy/Desktop/rust_proj/cross_domain_logger/target/release/deps/libpaste-822c2451d5320c54.dylib: /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/lib.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/attr.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/error.rs /Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/segment.rs
-
-/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/lib.rs:
-/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/attr.rs:
-/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/error.rs:
-/Users/bharathkumarreddybusireddy/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/segment.rs:
