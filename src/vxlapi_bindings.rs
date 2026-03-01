@@ -28,7 +28,7 @@ extern "C" {
     pub fn xlOpenDriver() -> XLstatus;
     pub fn xlCloseDriver() -> XLstatus;
     pub fn xlGetDriverConfig(pDriverConfig: *mut XLdriverConfig) -> XLstatus;
-    pub fn xlOpenPort(portHandle: *mut XLportHandle, appName: *const c_char, accessMask: XLaccess, permissionMask: XLaccess, rxQueueSize: u32, pPortHandle: *mut c_void, busType: u32) -> XLstatus;
+    pub fn xlOpenPort(portHandle: *mut XLportHandle, appName: *const c_char, accessMask: XLaccess, permissionMask: *mut XLaccess, rxQueueSize: u32, xlInterfaceVersion: u32, busType: u32) -> XLstatus;
     pub fn xlSetNotification(portHandle: XLportHandle, hwnd: *mut c_void, msg: u32) -> XLstatus;
     pub fn xlActivateChannel(portHandle: XLportHandle, accessMask: XLaccess, busType: u32, flags: u32) -> XLstatus;
     pub fn xlReceive(portHandle: XLportHandle, pEventCount: *mut u32, pEventList: *mut XLcanRxEvent) -> XLstatus;

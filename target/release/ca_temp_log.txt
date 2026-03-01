@@ -1,0 +1,21 @@
+Microsoft Windows [Version 10.0.22631.6649]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\se74117.CAG\Downloads\cross_domain_output-new_changes\cross_domain_output-new_changes\cross_domain_logger_windows_can_test_bundle>cross_domain_logger_windows.exe --test-can --can-map --can-app CANoe --can-max-channels 64
+vxlapi driver opened successfully
+CAN mapping for app 'CANoe': appChannel -> hwType/hwIndex/hwChannel (mask)
+appCh=0 -> hwType=120 hwIndex=0 hwChannel=12 mask=0x1000
+appCh=1 -> hwType=120 hwIndex=0 hwChannel=5 mask=0x20
+appCh=2 -> hwType=120 hwIndex=1 hwChannel=6 mask=0x20000000000
+appCh=3 -> hwType=120 hwIndex=1 hwChannel=12 mask=0x800000000000
+appCh=4 -> hwType=120 hwIndex=1 hwChannel=0 mask=0x800000000
+appCh=5 -> hwType=120 hwIndex=0 hwChannel=0 mask=0x1
+appCh=6 -> hwType=120 hwIndex=0 hwChannel=6 mask=0x40
+appCh=7 -> hwType=120 hwIndex=0 hwChannel=11 mask=0x800
+appCh=8 -> hwType=120 hwIndex=0 hwChannel=2 mask=0x4
+appCh=9 -> hwType=120 hwIndex=0 hwChannel=9 mask=0x200
+appCh=10 -> hwType=120 hwIndex=0 hwChannel=3 mask=0x8
+appCh=11 -> hwType=0 hwIndex=0 hwChannel=0 mask=0x0
+appCh=12 -> hwType=0 hwIndex=0 hwChannel=0 mask=0x0
+
+C:\Users\se74117.CAG\Downloads\cross_domain_output-new_changes\cross_domain_output-new_changes\cross_domain_logger_windows_can_test_bundle>
