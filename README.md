@@ -14,12 +14,9 @@ During validation, logs are often collected from different tools and saved in di
 ## Current setup
 
 - Language/runtime: Rust (`eframe/egui` UI)
-- CAN stack: Vector XL API (`vxlapi64.dll`)
-- Build profile: release, GNU Windows toolchain, feature `vxl-can`
-- CAN app name: `CANoe`
-- Interface version: `4`
-- User-visible channels: `1..11`
-- Internal app channels: `0..10`
+- Default CAN/bus backend: ControlDesk COM (`ControlDeskNG.Application`)
+- Optional legacy backend: Vector XL API (`vxlapi64.dll`) via `--can-backend vxl`
+- Build profile: release, GNU Windows toolchain
 
 ## Channel mapping in this build
 
@@ -52,7 +49,7 @@ CAN logs are written with network names (example: `FD_CAN5.asc`) under `CAN_LOGS
 Build manually:
 
 ```bat
-cargo +stable-x86_64-pc-windows-gnu build --release --features vxl-can
+cargo +stable-x86_64-pc-windows-gnu build --release
 ```
 
 Build + package + refresh shareable outputs:
@@ -61,18 +58,85 @@ Build + package + refresh shareable outputs:
 build_and_update_shareable.bat
 ```
 
-Check CAN channel mapping from the production executable:
+Check bus interface mapping from the currently running ControlDesk experiment:
 
 ```bat
-cross_domain_logger_windows.exe --test-can --can-map --can-app CANoe --can-max-channels 64
+cross_domain_logger_windows.exe --test-can --can-backend controldesk --can-map
 ```
 
 What this gives you:
 
-- active app channel mapping from CANoe
-- hardware binding per channel (`hwType`, `hwIndex`, `hwChannel`, `mask`)
-- quick confirmation of which channels are valid (`hwType=0` means not mapped)
+- active bus-like platform list from the active ControlDesk experiment
+- compatibility lines in `ch=<n> -> <BUS>:<PlatformName>` format
 - direct visibility before starting long capture runs
+
+Start continuous ControlDesk bus-interface capture into `CAN_LOGS/`:
+
+```bat
+cross_domain_logger_windows.exe --test-can --can-backend controldesk --can-listen-all --can-output-dir CAN_LOGS --can-log-format asc
+```
+
+Capture ControlDesk bus interfaces plus all detected Ethernet traffic in one run (default 60s):
+
+```bat
+run_controldesk_with_eth_all.bat
+```
+
+Custom duration (milliseconds), example 120000 ms:
+
+```bat
+run_controldesk_with_eth_all.bat 120000
+```
+
+This generates raw Ethernet packet capture in `CAN_LOGS/ethernet_all.pcapng` and ControlDesk logs under `CAN_LOGS/`.
+
+Capture only ETH_STLB Ethernet network traffic (auto-detect interface name containing `STLB`, default 60s):
+
+```bat
+run_eth_stlb_capture.bat
+```
+
+Custom duration (milliseconds), example 180000 ms:
+
+```bat
+run_eth_stlb_capture.bat 180000
+```
+
+Output file: `CAN_LOGS/ETH_STLB.pcapng`.
+
+Probe available ControlDesk/dSPACE COM APIs on the test PC and write a single report file:
+
+```bat
+run_testpc_api_probe.bat
+```
+
+Optional custom output path:
+
+```bat
+run_testpc_api_probe.bat CAN_LOGS\testpc_api_probe_custom.txt
+```
+
+Default output file: `CAN_LOGS/testpc_api_probe.txt`.
+
+Create a developer triage package zip from captured files in `CAN_LOGS` (`.asc/.blf/.mdf/.mf4/.pcapng/.pcap/.log/.txt`):
+
+```bat
+run_make_triage_pack.bat
+```
+
+Optional note text for `metadata.txt`:
+
+```bat
+run_make_triage_pack.bat "STLB issue repro - build X.Y - 2026-03-06"
+```
+
+Outputs are created in `dist/` as timestamped folder + zip.
+
+Optional (legacy) VXL flow:
+
+```bat
+cross_domain_logger_windows.exe --test-can --can-backend vxl --can-map --can-app CANoe --can-max-channels 64
+```
 
 ## Final deliverables
 
@@ -86,5 +150,7 @@ What this gives you:
 
 ## Notes
 
-- Keep `vxlapi64.dll` at repository root for local packaging.
+- Keep ControlDesk running with an active experiment before using ControlDesk backend commands.
+- Install `pywin32` (`pip install pywin32`) if `win32com.client` is unavailable.
+- Keep `vxlapi64.dll` only if you still use the legacy VXL backend.
 - Runtime CAN output goes to `CAN_LOGS/` to avoid clutter in the main folder.

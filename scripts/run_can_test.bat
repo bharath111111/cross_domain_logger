@@ -5,11 +5,9 @@ set "ROOT_DIR=%SCRIPT_DIR%.."
 
 if exist "%SCRIPT_DIR%cross_domain_logger_windows.exe" (
 	set "EXE=%SCRIPT_DIR%cross_domain_logger_windows.exe"
-	set "DLL=%SCRIPT_DIR%vxlapi64.dll"
 	set "OUT_DIR=%SCRIPT_DIR%"
 ) else (
 	set "EXE=%ROOT_DIR%\target\release\cross_domain_logger.exe"
-	set "DLL=%ROOT_DIR%\vxlapi64.dll"
 	set "OUT_DIR=%ROOT_DIR%\"
 )
 
@@ -21,21 +19,14 @@ if not exist "%EXE%" (
 	exit /b 1
 )
 
-if not exist "%DLL%" (
-	echo ERROR: DLL not found: %DLL%
-	pause >nul
-	exit /b 1
-)
-
 set "CAN_LOG_DIR=CAN_LOGS"
 if not exist "%CAN_LOG_DIR%" mkdir "%CAN_LOG_DIR%"
 
-set "LOG_FILE=%CAN_LOG_DIR%\channel9.asc"
-echo Starting continuous CAN capture on channel 9...
+echo Starting ControlDesk bus-interface capture (all connected interfaces)...
 echo Press Ctrl+C to stop capture.
-echo Output ASC file: %LOG_FILE%
-"%EXE%" --test-can --can-listen --can-channel 9 --can-app CANoe --can-iface-version 4 --can-log-format asc --can-log-file "%LOG_FILE%"
+echo Output folder: %CAN_LOG_DIR%
+"%EXE%" --test-can --can-backend controldesk --can-listen-all --can-log-format asc --can-output-dir "%CAN_LOG_DIR%"
 echo.
-echo Capture stopped. Output saved to %LOG_FILE%.
+echo Capture stopped. Output saved under %CAN_LOG_DIR%.
 echo Press any key to close.
 pause >nul

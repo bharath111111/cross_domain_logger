@@ -1,1 +1,1 @@
-C:\Users\Bharath\cross_domain_logger\target\release\cross_domain_logger.exe: C:\Users\Bharath\cross_domain_logger\build.rs C:\Users\Bharath\cross_domain_logger\src\main.rs C:\Users\Bharath\cross_domain_logger\src\vxl_capture.rs
+C:\Users\Bharath\cross_domain_logger\target\release\cross_domain_logger.exe: C:\Users\Bharath\cross_domain_logger\build.rs C:\Users\Bharath\cross_domain_logger\src\controldesk_capture.rs C:\Users\Bharath\cross_domain_logger\src\main.rs

@@ -1,5 +1,6 @@
 #[cfg(feature = "vxl-can")]
 mod vxl_capture;
+mod controldesk_capture;
             // Optional: CAN/ETH capture via vxlapi.dll
             // Example usage (uncomment to test):
             // match vxl_capture::try_open_driver() {
@@ -135,6 +136,8 @@ impl LoggerApp {
 
         let output = Command::new(exe)
             .arg("--test-can")
+            .arg("--can-backend")
+            .arg("controldesk")
             .arg("--can-map")
             .arg("--can-app")
             .arg("CANoe")
@@ -334,6 +337,8 @@ impl LoggerApp {
 
             let can_child = Command::new(exe)
                 .arg("--test-can")
+                .arg("--can-backend")
+                .arg("controldesk")
                 .arg("--can-listen-all")
                 .arg("--can-max-channels")
                 .arg("64")
@@ -523,7 +528,7 @@ impl eframe::App for LoggerApp {
             ui.label(format!("Status: {}", self.status));
 
             ui.add_space(6.0);
-            egui::CollapsingHeader::new("Available CAN Channels (CANoe mapping)")
+            egui::CollapsingHeader::new("Available Bus Interfaces (ControlDesk)")
                 .default_open(true)
                 .show(ui, |ui| {
                     egui::ScrollArea::vertical().max_height(100.0).show(ui, |ui| {
@@ -590,6 +595,68 @@ fn main() -> Result<(), eframe::Error> {
 
     // Check for --test-can flag (for Vector CAN test)
     if args.iter().any(|arg| arg == "--test-can") {
+        let mut can_backend = String::from("controldesk");
+        let mut can_map = false;
+        let mut can_listen_all = false;
+        let mut can_duration_ms: Option<u64> = None;
+        let mut can_log_format = String::from("text");
+        let mut can_output_dir: Option<String> = None;
+
+        let mut index = 0usize;
+        while index < args.len() {
+            if args[index] == "--can-backend" && index + 1 < args.len() {
+                can_backend = args[index + 1].to_lowercase();
+            }
+            if args[index] == "--can-map" {
+                can_map = true;
+            }
+            if args[index] == "--can-listen-all" {
+                can_listen_all = true;
+            }
+            if args[index] == "--can-duration-ms" && index + 1 < args.len() {
+                if let Ok(parsed) = args[index + 1].parse::<u64>() {
+                    can_duration_ms = Some(parsed);
+                }
+            }
+            if args[index] == "--can-output-dir" && index + 1 < args.len() {
+                can_output_dir = Some(args[index + 1].clone());
+            }
+            if args[index] == "--can-log-format" && index + 1 < args.len() {
+                can_log_format = args[index + 1].to_lowercase();
+            }
+            index += 1;
+        }
+
+        if can_backend != "vxl" {
+            if can_map {
+                match controldesk_capture::print_can_channel_mapping() {
+                    Ok(()) => {}
+                    Err(e) => println!("ControlDesk mapping error: {}", e),
+                }
+            } else if can_listen_all {
+                let format = if can_log_format == "asc" {
+                    controldesk_capture::CanLogFormat::Asc
+                } else {
+                    controldesk_capture::CanLogFormat::Text
+                };
+
+                match controldesk_capture::listen_can_all_connected(
+                    can_duration_ms,
+                    can_output_dir.as_deref(),
+                    format,
+                ) {
+                    Ok(()) => {}
+                    Err(e) => println!("ControlDesk listen-all error: {}", e),
+                }
+            } else {
+                match controldesk_capture::print_can_channel_mapping() {
+                    Ok(()) => {}
+                    Err(e) => println!("ControlDesk mapping error: {}", e),
+                }
+            }
+            return Ok(());
+        }
+
         #[cfg(feature = "vxl-can")]
         {
             let mut selected_channel: Option<u32> = None;
