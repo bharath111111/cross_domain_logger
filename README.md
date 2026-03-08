@@ -24,15 +24,15 @@ During validation, logs are often collected from different tools and saved in di
 |---|---:|---|---|
 | 1  | 0  | vn 1670 1 | FD_CANW  |
 | 2  | 1  | vn 1670 1 | FD_CAN5  |
-| 3  | 2  | vn 1670 2 | FD_CAN9  |
-| 4  | 3  | vn 1670 2 | FD_CAN13 |
-| 5  | 4  | vn 1670 2 | FD_CAN14 |
-| 6  | 5  | vn 1670 1 | FD_CAN15 |
-| 7  | 6  | vn 1670 1 | FD_CAN17 |
-| 8  | 7  | vn 1670 1 | FD_CAN18 |
-| 9  | 8  | vn 1670 1 | FD_CAN20 |
-| 10 | 9  | vn 1670 1 | FD_CAN21 |
-| 11 | 10 | vn 1670 1 | HS_CAN1  |
+| 3  | 2  | vn 1670 2 | FD_CAN13 |
+| 4  | 3  | vn 1670 2 | FD_CAN14 |
+| 5  | 4  | vn 1670 2 | FD_CAN15 |
+| 6  | 5  | vn 1670 1 | FD_CAN17 |
+| 7  | 6  | vn 1670 1 | FD_CAN18 |
+| 8  | 7  | vn 1670 1 | FD_CAN20 |
+| 9  | 8  | vn 1670 1 | FD_CAN21 |
+| 10 | 9  | vn 1670 1 | HS_CAN1  |
+| 11 | 10 | vn 1670 1 | HS_CAN4  |
 
 CAN logs are written with network names (example: `FD_CAN5.asc`) under `CAN_LOGS/`.
 

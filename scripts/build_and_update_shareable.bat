@@ -119,15 +119,15 @@ if errorlevel 1 (
   echo Channel mapping ^(user channel to app channel to VN to Network^):
   echo   1  to 0  to vn 1670 1 to FD_CANW
   echo   2  to 1  to vn 1670 1 to FD_CAN5
-  echo   3  to 2  to vn 1670 2 to FD_CAN9
-  echo   4  to 3  to vn 1670 2 to FD_CAN13
-  echo   5  to 4  to vn 1670 2 to FD_CAN14
-  echo   6  to 5  to vn 1670 1 to FD_CAN15
-  echo   7  to 6  to vn 1670 1 to FD_CAN17
-  echo   8  to 7  to vn 1670 1 to FD_CAN18
-  echo   9  to 8  to vn 1670 1 to FD_CAN20
-  echo   10 to 9  to vn 1670 1 to FD_CAN21
-  echo   11 to 10 to vn 1670 1 to HS_CAN1
+  echo   3  to 2  to vn 1670 2 to FD_CAN13
+  echo   4  to 3  to vn 1670 2 to FD_CAN14
+  echo   5  to 4  to vn 1670 2 to FD_CAN15
+  echo   6  to 5  to vn 1670 1 to FD_CAN17
+  echo   7  to 6  to vn 1670 1 to FD_CAN18
+  echo   8  to 7  to vn 1670 1 to FD_CAN20
+  echo   9  to 8  to vn 1670 1 to FD_CAN21
+  echo   10 to 9  to vn 1670 1 to HS_CAN1
+  echo   11 to 10 to vn 1670 1 to HS_CAN4
   echo.
   echo Output naming:
   echo   ASC files are written using network names ^(for example FD_CANW.asc^).
