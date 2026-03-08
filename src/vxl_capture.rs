@@ -19,6 +19,7 @@ const XL_ERR_QUEUE_IS_EMPTY: XLstatus = 10;
 const XL_CAN_EV_TAG_RX_OK: u16 = 0x0400;
 const XL_CAN_EV_TAG_TX_OK: u16 = 0x0404;
 const XL_OUTPUT_MODE_NORMAL: i32 = 1;
+const XL_CAN_EXT_MSG_ID: u32 = 0x8000_0000;
 
 #[repr(C)]
 pub struct XLcanFdConf {
@@ -723,8 +724,9 @@ pub fn listen_can_on_channel(
             CanLogFormat::Text => {}
             CanLogFormat::Asc => {
                 let _ = writeln!(file, "date {}", chrono::Local::now().format("%a %b %d %H:%M:%S%.3f %Y"));
-                let _ = writeln!(file, "base hex  timestamps relative");
-                let _ = writeln!(file, "internal events logged");
+                let _ = writeln!(file, "base hex timestamps absolute");
+                let _ = writeln!(file, "no internal events logged");
+                let _ = writeln!(file, "// version 8.5.0");
                 let _ = writeln!(file, "Begin Triggerblock {}", chrono::Local::now().format("%a %b %d %H:%M:%S%.3f %Y"));
             }
         }
@@ -779,9 +781,17 @@ pub fn listen_can_on_channel(
                             let _ = writeln!(file, "{}", line);
                         }
                         CanLogFormat::Asc => {
-                            let ts = start.elapsed().as_secs_f64();
-                            let channel = event.channelIndex as u32 + 1;
+                            let ts = chrono::Local::now().timestamp_micros() as f64 / 1_000_000.0;
+                            let channel = 1u32;
                             let id = msg.canId & 0x1FFF_FFFF;
+                            let is_extended = (msg.canId & XL_CAN_EXT_MSG_ID) != 0 || id > 0x7FF;
+                            let id_field = if is_extended {
+                                format!("{:X}x", id)
+                            } else {
+                                format!("{:X}", id)
+                            };
+                            let dir = if event.tag == XL_CAN_EV_TAG_TX_OK { "Tx" } else { "Rx" };
+                            let dlc_bytes = data_len;
                             let mut bytes = String::new();
                             for (i, b) in msg.data[..data_len].iter().enumerate() {
                                 if i > 0 {
@@ -791,11 +801,12 @@ pub fn listen_can_on_channel(
                             }
                             let _ = writeln!(
                                 file,
-                                "{:.6} {} {:X} Rx d {} {}",
+                                "{:.7} CANFD {} {} {}   1 0 D {} {} 0 0 3000 0 0 0 0 0",
                                 ts,
                                 channel,
-                                id,
-                                data_len,
+                                dir,
+                                id_field,
+                                dlc_bytes,
                                 bytes
                             );
                         }

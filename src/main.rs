@@ -137,7 +137,7 @@ impl LoggerApp {
         let output = Command::new(exe)
             .arg("--test-can")
             .arg("--can-backend")
-            .arg("controldesk")
+            .arg("vxl")
             .arg("--can-map")
             .arg("--can-app")
             .arg("CANoe")
@@ -338,7 +338,7 @@ impl LoggerApp {
             let can_child = Command::new(exe)
                 .arg("--test-can")
                 .arg("--can-backend")
-                .arg("controldesk")
+                .arg("vxl")
                 .arg("--can-listen-all")
                 .arg("--can-max-channels")
                 .arg("64")
@@ -593,9 +593,9 @@ impl eframe::App for LoggerApp {
 fn main() -> Result<(), eframe::Error> {
     let args: Vec<String> = std::env::args().collect();
 
-    // Check for --test-can flag (for Vector CAN test)
+    // Check for --test-can flag (CAN backend test path)
     if args.iter().any(|arg| arg == "--test-can") {
-        let mut can_backend = String::from("controldesk");
+        let mut can_backend = String::from("vxl");
         let mut can_map = false;
         let mut can_listen_all = false;
         let mut can_duration_ms: Option<u64> = None;

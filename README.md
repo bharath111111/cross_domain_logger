@@ -14,8 +14,8 @@ During validation, logs are often collected from different tools and saved in di
 ## Current setup
 
 - Language/runtime: Rust (`eframe/egui` UI)
-- Default CAN/bus backend: ControlDesk COM (`ControlDeskNG.Application`)
-- Optional legacy backend: Vector XL API (`vxlapi64.dll`) via `--can-backend vxl`
+- Default CAN/bus backend: Vector XL API (`vxlapi64.dll`) via `--can-backend vxl`
+- Optional ControlDesk backend: COM snapshot/probe tools via `--can-backend controldesk`
 - Build profile: release, GNU Windows toolchain
 
 ## Channel mapping in this build
@@ -58,22 +58,22 @@ Build + package + refresh shareable outputs:
 build_and_update_shareable.bat
 ```
 
-Check bus interface mapping from the currently running ControlDesk experiment:
+Check CAN channel mapping from VXL/CANoe app mapping:
 
 ```bat
-cross_domain_logger_windows.exe --test-can --can-backend controldesk --can-map
+cross_domain_logger_windows.exe --test-can --can-backend vxl --can-map --can-app CANoe --can-max-channels 64
 ```
 
 What this gives you:
 
-- active bus-like platform list from the active ControlDesk experiment
-- compatibility lines in `ch=<n> -> <BUS>:<PlatformName>` format
+- app channel mapping with hardware/channel association
+- network name mapping for expected channels
 - direct visibility before starting long capture runs
 
-Start continuous ControlDesk bus-interface capture into `CAN_LOGS/`:
+Start continuous VXL CAN capture into `CAN_LOGS/`:
 
 ```bat
-cross_domain_logger_windows.exe --test-can --can-backend controldesk --can-listen-all --can-output-dir CAN_LOGS --can-log-format asc
+cross_domain_logger_windows.exe --test-can --can-backend vxl --can-listen-all --can-max-channels 64 --can-app CANoe --can-iface-version 4 --can-output-dir CAN_LOGS --can-log-format asc
 ```
 
 Capture ControlDesk bus interfaces plus all detected Ethernet traffic in one run (default 60s):
@@ -89,6 +89,8 @@ run_controldesk_with_eth_all.bat 120000
 ```
 
 This generates raw Ethernet packet capture in `CAN_LOGS/ethernet_all.pcapng` and ControlDesk logs under `CAN_LOGS/`.
+
+Important: ControlDesk COM snapshot output is topology/status data, not raw CAN frame recorder data.
 
 Capture only ETH_STLB Ethernet network traffic (auto-detect interface name containing `STLB`, default 60s):
 

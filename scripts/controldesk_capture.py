@@ -312,6 +312,19 @@ def list_platforms() -> int:
 
 
 def capture_all(duration_ms: Optional[int], output_dir: str, poll_ms: int, log_format: str) -> int:
+    normalized_format = (log_format or "text").strip().lower()
+    if normalized_format in {"asc", "blf", "mdf", "mf4"}:
+        print(
+            "cd-error requested log format requires real bus-frame recorder data; "
+            "ControlDesk platform snapshot API cannot produce industry-standard CAN frame logs.",
+            file=sys.stderr,
+        )
+        print(
+            "cd-hint use ControlDesk recorder for .asc/.blf/.mdf and use this script only for topology snapshots.",
+            file=sys.stderr,
+        )
+        return 4
+
     os.makedirs(output_dir, exist_ok=True)
 
     meta_path = os.path.join(output_dir, "controldesk_bus_capture.log")
@@ -323,7 +336,7 @@ def capture_all(duration_ms: Optional[int], output_dir: str, poll_ms: int, log_f
         print(f"cd-error connect failed: {exc}", file=sys.stderr)
         return 2
 
-    print(f"cd-capture started version={getattr(app, 'Version', 'unknown')} format={log_format}")
+    print(f"cd-capture started version={getattr(app, 'Version', 'unknown')} format={normalized_format}")
     print(f"cd-capture experiment={getattr(experiment, 'Name', 'unknown')}")
     print(f"cd-capture output={meta_path}")
     print("cd-capture mode=platform_snapshot_with_best_effort_values")

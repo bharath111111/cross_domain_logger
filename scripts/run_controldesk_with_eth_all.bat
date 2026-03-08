@@ -80,7 +80,7 @@ echo Starting ControlDesk bus capture for %CAPTURE_MS% ms...
 echo Output folder: %OUT_DIR%
 echo Running ControlDesk capture... >> "%RUN_LOG%"
 
-"%EXE%" --test-can --can-backend controldesk --can-listen-all --can-duration-ms %CAPTURE_MS% --can-log-format asc --can-output-dir "%OUT_DIR%" >> "%RUN_LOG%" 2>&1
+"%EXE%" --test-can --can-backend controldesk --can-listen-all --can-duration-ms %CAPTURE_MS% --can-log-format text --can-output-dir "%OUT_DIR%" >> "%RUN_LOG%" 2>&1
 set "CAN_ERR=%ERRORLEVEL%"
 
 if not "%CAN_ERR%"=="0" (

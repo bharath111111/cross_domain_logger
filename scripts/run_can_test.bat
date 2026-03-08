@@ -22,10 +22,10 @@ if not exist "%EXE%" (
 set "CAN_LOG_DIR=CAN_LOGS"
 if not exist "%CAN_LOG_DIR%" mkdir "%CAN_LOG_DIR%"
 
-echo Starting ControlDesk bus-interface capture (all connected interfaces)...
+echo Starting VXL CAN capture (all connected interfaces)...
 echo Press Ctrl+C to stop capture.
 echo Output folder: %CAN_LOG_DIR%
-"%EXE%" --test-can --can-backend controldesk --can-listen-all --can-log-format asc --can-output-dir "%CAN_LOG_DIR%"
+"%EXE%" --test-can --can-backend vxl --can-listen-all --can-max-channels 64 --can-app CANoe --can-iface-version 4 --can-log-format asc --can-output-dir "%CAN_LOG_DIR%"
 echo.
 echo Capture stopped. Output saved under %CAN_LOG_DIR%.
 echo Press any key to close.
